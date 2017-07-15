@@ -6,20 +6,20 @@ export class Button extends React.Component {
     {
         super()
         this.likeCreator = this.likeCreator.bind(this) ;  
-        this.ondislike = this.ondislike.bind(this) ;  
+        this.onDislike = this.onDislike.bind(this) ;  
     }
     
     
     likeCreator (e) 
     {
         const commentId =  (e.target.parentNode.dataset.id)  ;
-        this.props.onComment(commentId) ;
+        this.props.onLike(commentId) ;
     } 
     
-    ondislike (e) 
+    onDislike (e) 
     {
     const commentId = (e.target.parentNode.dataset.id) ; 
-    this.props.onDecrement(commentId) ;
+    this.props.onDislike(commentId) ;
     } 
     
     render () {
@@ -28,15 +28,16 @@ export class Button extends React.Component {
             
             <div className='cardComment' data-id="1" >
             <h1> you have {} like </h1>
-            <button onClick={this.likeCreator.bind()}  > Like </button>
+            <button onClick={this.likeCreator}  > Like </button>
             <input  onChange={this.props.Onchangement}></input>
-            <button onClick={this.ondislike}>UnLike  </button>
+            <button onClick={this.onDislike}>UnLike  </button>
             </div>
             
             <div className='cardComment' data-id='2' >
-            <button onClick={this.likeCreator.bind(this.id)}  >Like </button>
+            <h1> you have {} like </h1>
+            <button onClick={this.likeCreator}  >Like </button>
             <input  onChange={this.props.Onchangement}></input>
-            <button onClick={this.ondislike}>UnLike</button>
+            <button onClick={this.onDislike}>UnLike</button>
             </div>
                 
                 </div>
