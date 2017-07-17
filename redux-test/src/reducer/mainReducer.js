@@ -5,7 +5,8 @@
         
         
         
-        case 'ADD_LIKE' :     
+        case 'ADD_LIKE' :  
+            
 const newState = state.setIn(['comment' , action.commentId, 'like' ],state.getIn(['comment' , action.commentId , 'like' ]  ) +1) ;
             return newState
     
