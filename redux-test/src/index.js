@@ -25,6 +25,8 @@ class App extends Component {
         
         <Card 
 onLike={(commentId) => store.dispatch({type :'ADD_LIKE' , commentId })}
+onDelete={(commentId) => store.dispatch({type :'ADD_DELETE' , commentId })}
+onAdd={( name , text , number , like ) => store.dispatch({type :'ADD_CARD' ,  name , text , number    })}
 onDislike={(commentId) => store.dispatch({ type: 'REM_LIKE' ,commentId })}
        />
        
